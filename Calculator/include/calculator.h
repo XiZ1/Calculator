@@ -8,5 +8,11 @@ using std::string;
 
 class c_calculator
 {
+private:
+
+	float first_number, second_number;
+	char math_sign;
+
+public:
 
 };
