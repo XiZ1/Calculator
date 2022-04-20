@@ -2,7 +2,9 @@
 
 int main()
 {
-	std::cout << "Hello World!\n";
+	c_standard_calculator o_calculator;
+
+	o_calculator.start_standard_calculator();
 
 	return 0;
 }
