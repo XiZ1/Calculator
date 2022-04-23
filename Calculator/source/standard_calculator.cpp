@@ -1,4 +1,8 @@
-#include "calculator.h"
+#include "standard_calculator.h"
+
+/*
+	PRIVATE:
+*/
 
 void c_standard_calculator::clear_screen()
 {
@@ -8,20 +12,20 @@ void c_standard_calculator::clear_screen()
 void c_standard_calculator::enter_the_date()
 {
 	clear_screen();
-	bool is_loop_end = false;
+	bool is_loop_end = true;
 	do
 	{
 		cout << "Enter first number:";
 		cin >> first_number;
-		if (is_loop_end = is_digit(first_number))
+		if (check_input())
 		{
 			cout << "\nEnter math sign:";
 			cin >> math_sign;
-			if (is_loop_end = is_char(math_sign))
+			if (is_char())
 			{
 				cout << "\nEnter second number:";
 				cin >> second_number;
-				if (is_loop_end = is_digit(second_number))
+				if (check_input())
 				{
 					is_loop_end = false;
 				}
@@ -30,30 +34,37 @@ void c_standard_calculator::enter_the_date()
 	}while (is_loop_end);
 }
 
-bool c_standard_calculator::is_digit(int number) //TODO: PRZEMYSLEÆ ZAWÊ¯ANIE TYPÓW
+bool c_standard_calculator::check_input()
 {
-	if (!isdigit(number))
+	if (cin.fail())
 	{
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cout << "\nBad input value. Try again.\n";
 		return false;
 	}
 	return true;
 }
 
-bool c_standard_calculator::is_char(char sign)
+bool c_standard_calculator::is_float_point(float number) //TODO: PRZEMYSLEÆ ZAWÊ¯ANIE TYPÓW
 {
-	if ((sign == '+') || (sign == '-') || (sign == '*') || (sign == '/'))
+	string temp = std::to_string(number);
+	int number_length = temp.length();
+
+	for (auto i = 0; i <= number_length; i++)
+	{
+	
+	}
+	return true;
+}
+
+bool c_standard_calculator::is_char()
+{
+	if ((math_sign == '+') || (math_sign == '-') || (math_sign == '*') || (math_sign == '/'))
 	{
 		return true;
 	}
 	return false;
-}
-
-
-void c_standard_calculator::show_result()
-{
-	clear_screen();
-	cout << "Result = " << result << '\n';
-	system("pause >nul");
 }
 
 int c_standard_calculator::which_mathematical_operation()
@@ -107,6 +118,17 @@ float c_standard_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 		}
 	}
 }
+
+void c_standard_calculator::show_result()
+{
+	clear_screen();
+	cout << "Result = " << result << '\n';
+	system("pause >nul");
+}
+
+/*
+	PUBLIC:
+*/
 
 c_standard_calculator::c_standard_calculator(float f_number, float s_number, float res, char sign) : first_number(f_number), second_number(s_number), result(res), math_sign(sign)
 {

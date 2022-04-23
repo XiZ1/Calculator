@@ -18,12 +18,12 @@
     <ClCompile Include="source\main.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="source\calculator.cpp">
+    <ClCompile Include="source\standard_calculator.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\calculator.h">
+    <ClInclude Include="include\standard_calculator.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

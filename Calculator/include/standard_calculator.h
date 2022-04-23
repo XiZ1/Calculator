@@ -1,7 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include <conio.h>
+#include <cctype>
+#include <string>
 
 using std::cout;
 using std::cin;
@@ -16,8 +17,9 @@ private:
 
 	static void clear_screen();
 	void enter_the_date();
-	bool is_digit(int);
-	bool is_char(char);
+	bool check_input();
+	bool is_float_point(float);
+	bool is_char();
 	int which_mathematical_operation();
 	float do_mathematical_operation(int);
 	float addition()
