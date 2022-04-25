@@ -4,34 +4,87 @@
 	PRIVATE:
 */
 
+void c_standard_calculator::display_the_message(string message)
+{
+	cout << message;
+}
+
 void c_standard_calculator::clear_screen()
 {
 	system("cls");
 }
 
-void c_standard_calculator::enter_the_date()
+bool c_standard_calculator::enter_the_date()
 {
-	clear_screen();
 	bool is_loop_end = true;
 	do
 	{
-		cout << "Enter first number:";
+		clear_screen();
+		display_the_message("If you want to quit press \'q\'.");
+		if(whether_exit(_getch()))
+		{
+			return false;
+		}
+		do
+		{
+			clear_screen();
+			display_the_message("Enter first number: ");
+			cin >> first_number;
+		}
+		while (!check_input());
+		do
+		{
+			clear_screen();
+			display_the_message("\nEnter math sign: ");
+			cin >> math_sign;
+		}
+		while (!is_char());
+		do
+		{
+			clear_screen();
+			display_the_message("\nEnter second number: ");
+			cin >> second_number;
+		}
+		while (!check_input());
+		if ((math_sign == '/') && (second_number == (float)0))
+		{
+			clear_screen();
+			display_the_message("Mistake! Division by zero.");
+			continue;
+		}
+		if ((math_sign == '-') && (second_number < 0))
+		{
+			math_sign = '+';
+			second_number = abs(second_number);
+		}
+		is_loop_end = false;
+	/*	display_the_message("Enter first number: ");
 		cin >> first_number;
 		if (check_input())
 		{
-			cout << "\nEnter math sign:";
+			display_the_message("\nEnter math sign: ");
 			cin >> math_sign;
 			if (is_char())
 			{
-				cout << "\nEnter second number:";
+				display_the_message("\nEnter second number: ");
 				cin >> second_number;
 				if (check_input())
 				{
 					is_loop_end = false;
 				}
 			}
-		}
+		}*/
 	}while (is_loop_end);
+	return true;
+}
+
+bool c_standard_calculator::whether_exit(char sign)
+{
+	if(sign == 'q')
+	{
+		return true;
+	}
+	return false;
 }
 
 bool c_standard_calculator::check_input()
@@ -42,18 +95,6 @@ bool c_standard_calculator::check_input()
 		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		cout << "\nBad input value. Try again.\n";
 		return false;
-	}
-	return true;
-}
-
-bool c_standard_calculator::is_float_point(float number) //TODO: PRZEMYSLEÆ ZAWÊ¯ANIE TYPÓW
-{
-	string temp = std::to_string(number);
-	int number_length = temp.length();
-
-	for (auto i = 0; i <= number_length; i++)
-	{
-	
 	}
 	return true;
 }
@@ -136,11 +177,16 @@ c_standard_calculator::c_standard_calculator(float f_number, float s_number, flo
 
 void c_standard_calculator::start_standard_calculator()
 {
+	bool end_loop = true;
 	clear_screen();
 	do
 	{
-		enter_the_date();
+		if(!enter_the_date())
+		{
+			end_loop = false;
+			continue;
+		}
 		do_mathematical_operation(which_mathematical_operation());
 		show_result();
-	}while (true);
+	}while (end_loop);
 }

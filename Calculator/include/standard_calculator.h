@@ -1,8 +1,10 @@
 #pragma once
 
 #include <iostream>
+#include <conio.h>
 #include <cctype>
 #include <string>
+#include <cmath>
 
 using std::cout;
 using std::cin;
@@ -15,10 +17,11 @@ private:
 	float first_number, second_number, result;
 	char math_sign;
 
+	void display_the_message(string);
 	static void clear_screen();
-	void enter_the_date();
+	bool enter_the_date();
+	bool whether_exit(char);
 	bool check_input();
-	bool is_float_point(float);
 	bool is_char();
 	int which_mathematical_operation();
 	float do_mathematical_operation(int);
