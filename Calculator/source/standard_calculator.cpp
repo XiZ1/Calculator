@@ -58,22 +58,6 @@ bool c_standard_calculator::enter_the_date()
 			second_number = abs(second_number);
 		}
 		is_loop_end = false;
-	/*	display_the_message("Enter first number: ");
-		cin >> first_number;
-		if (check_input())
-		{
-			display_the_message("\nEnter math sign: ");
-			cin >> math_sign;
-			if (is_char())
-			{
-				display_the_message("\nEnter second number: ");
-				cin >> second_number;
-				if (check_input())
-				{
-					is_loop_end = false;
-				}
-			}
-		}*/
 	}while (is_loop_end);
 	return true;
 }
@@ -163,7 +147,7 @@ float c_standard_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 void c_standard_calculator::show_result()
 {
 	clear_screen();
-	cout << "Result = " << result << '\n';
+	cout << first_number << " " << math_sign << " " << second_number << " = " << result << '\n';
 	system("pause >nul");
 }
 
