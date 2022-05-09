@@ -1,10 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <conio.h>
-#include <cctype>
 #include <string>
-#include <cmath>
 
 using std::cout;
 using std::cin;

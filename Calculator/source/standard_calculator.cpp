@@ -1,4 +1,6 @@
 #include "standard_calculator.h"
+#include <conio.h>
+#include <cmath>
 
 /*
 	PRIVATE:
