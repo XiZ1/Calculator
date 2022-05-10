@@ -3,55 +3,69 @@
 #include <cmath>
 
 /*
-	PRIVATE:
+	PUBLIC:
 */
 
-void c_standard_calculator::display_the_message(string message)
+c_standard_calculator::c_standard_calculator(float f_number, float s_number, float res, char sign) : first_number(f_number), second_number(s_number), result(res), math_sign(sign)
 {
-	cout << message;
 }
 
-void c_standard_calculator::clear_screen()
+void c_standard_calculator::start_standard_calculator()
 {
-	system("cls");
+	bool end_loop = true;
+	cal.clear_screen();
+	do
+	{
+		if(!enter_the_date())
+		{
+			end_loop = false;
+			continue;
+		}
+		do_mathematical_operation(which_mathematical_operation());
+		show_result();
+	}while (end_loop);
 }
+
+/*
+	PRIVATE:
+*/
 
 bool c_standard_calculator::enter_the_date()
 {
 	bool is_loop_end = true;
 	do
 	{
-		clear_screen();
-		display_the_message("If you want to quit press \'q\'.");
+		cal.clear_screen();
+		cal.display_the_message("If you want to quit press \'q\'.");
 		if(whether_exit(_getch()))
 		{
 			return false;
 		}
 		do
 		{
-			clear_screen();
-			display_the_message("Enter first number: ");
+			cal.clear_screen();
+			cal.display_the_message("Enter first number: ");
 			cin >> first_number;
 		}
 		while (!check_input());
 		do
 		{
-			clear_screen();
-			display_the_message("\nEnter math sign: ");
+			cal.clear_screen();
+			cal.display_the_message("\nEnter math sign: ");
 			cin >> math_sign;
 		}
 		while (!is_char());
 		do
 		{
-			clear_screen();
-			display_the_message("\nEnter second number: ");
+			cal.clear_screen();
+			cal.display_the_message("\nEnter second number: ");
 			cin >> second_number;
 		}
 		while (!check_input());
-		if ((math_sign == '/') && (second_number == (float)0))
+		if (is_division_by_zero())
 		{
-			clear_screen();
-			display_the_message("Mistake! Division by zero.");
+			cal.clear_screen();
+			cal.display_the_message("Mistake! Division by zero.");
 			continue;
 		}
 		if ((math_sign == '-') && (second_number < 0))
@@ -88,6 +102,15 @@ bool c_standard_calculator::check_input()
 bool c_standard_calculator::is_char()
 {
 	if ((math_sign == '+') || (math_sign == '-') || (math_sign == '*') || (math_sign == '/'))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool c_standard_calculator::is_division_by_zero()
+{
+	if ((math_sign == '/') && (second_number == (float)0))
 	{
 		return true;
 	}
@@ -148,31 +171,7 @@ float c_standard_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 
 void c_standard_calculator::show_result()
 {
-	clear_screen();
+	cal.clear_screen();
 	cout << first_number << " " << math_sign << " " << second_number << " = " << result << '\n';
 	system("pause >nul");
-}
-
-/*
-	PUBLIC:
-*/
-
-c_standard_calculator::c_standard_calculator(float f_number, float s_number, float res, char sign) : first_number(f_number), second_number(s_number), result(res), math_sign(sign)
-{
-}
-
-void c_standard_calculator::start_standard_calculator()
-{
-	bool end_loop = true;
-	clear_screen();
-	do
-	{
-		if(!enter_the_date())
-		{
-			end_loop = false;
-			continue;
-		}
-		do_mathematical_operation(which_mathematical_operation());
-		show_result();
-	}while (end_loop);
 }
