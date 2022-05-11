@@ -27,6 +27,5 @@ private:
 	static const int tab_size = 4;
 	char tab_advanced_math_sign[tab_size] = { '+', '-', '*', '/' };
 
-	bool enter_the_date();
 	float do_mathematical_operation(int);
 };

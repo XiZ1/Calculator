@@ -8,12 +8,17 @@
 void c_advanced_calculator::start_advanced_calculator()
 {
 	bool end_loop = true;
-	cal.clear_screen();
 	do
 	{
-		if (!std_cal.enter_the_date(tab_advanced_math_sign, tab_size))
+		if (std_cal.whether_exit())
 		{
 			end_loop = false;
+			continue;
+		}
+		cal.clear_screen();
+		cal.display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\n");
+		if (!std_cal.enter_the_date(tab_advanced_math_sign, tab_size))
+		{
 			continue;
 		}
 		do_mathematical_operation(std_cal.which_mathematical_operation(tab_advanced_math_sign, tab_size));

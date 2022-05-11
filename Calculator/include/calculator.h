@@ -16,7 +16,7 @@ public:
 	friend class c_standard_calculator;
 	friend class c_advanced_calculator;
 
-	bool start_calculator_app();
+	void start_calculator_app();
 
 private:
 	void display_the_message(string);

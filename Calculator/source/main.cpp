@@ -1,10 +1,9 @@
-#include <standard_calculator.h>
+#include "calculator.h"
 
 int main()
 {
-	c_standard_calculator o_standard_calculator;
-
-	o_standard_calculator.start_standard_calculator();
+	c_calculator o_calculator;
+	o_calculator.start_calculator_app();
 
 	return 0;
 }

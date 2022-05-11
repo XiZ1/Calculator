@@ -30,7 +30,7 @@ private:
 	char tab_standard_math_sign[tab_size] = { '+', '-', '*', '/' };
 
 	bool enter_the_date(char* tab_math_sign, int tab_size);
-	bool whether_exit(char);
+	bool whether_exit();
 	bool check_input();
 	bool is_char(char* tab_math_sign, int tab_size);
 	bool is_division_by_zero();

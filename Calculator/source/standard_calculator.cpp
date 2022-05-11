@@ -13,12 +13,17 @@ c_standard_calculator::c_standard_calculator(float f_number, float s_number, flo
 void c_standard_calculator::start_standard_calculator()
 {
 	bool end_loop = true;
-	cal.clear_screen();
 	do
 	{
-		if(!enter_the_date(tab_standard_math_sign, tab_size))
+		if (whether_exit())
 		{
 			end_loop = false;
+			continue;
+		}
+		cal.clear_screen();
+		cal.display_the_message("STANDARD CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\n");
+		if(!enter_the_date(tab_standard_math_sign, tab_size))
+		{
 			continue;
 		}
 		do_mathematical_operation(which_mathematical_operation(tab_standard_math_sign, tab_size));
@@ -35,29 +40,20 @@ bool c_standard_calculator::enter_the_date(char* tab_math_sign, int tab_size)
 	bool is_loop_end = true;
 	do
 	{
-		cal.clear_screen();
-		cal.display_the_message("If you want to quit press \'q\'.");
-		if(whether_exit(_getch()))
-		{
-			return false;
-		}
 		do
 		{
-			cal.clear_screen();
 			cal.display_the_message("Enter first number: ");
 			cin >> first_number;
 		}
 		while (!check_input());
 		do
 		{
-			cal.clear_screen();
 			cal.display_the_message("\nEnter math sign: ");
 			cin >> math_sign;
 		}
 		while (!is_char(tab_math_sign, tab_size));
 		do
 		{
-			cal.clear_screen();
 			cal.display_the_message("\nEnter second number: ");
 			cin >> second_number;
 		}
@@ -66,7 +62,8 @@ bool c_standard_calculator::enter_the_date(char* tab_math_sign, int tab_size)
 		{
 			cal.clear_screen();
 			cal.display_the_message("Mistake! Division by zero.");
-			continue;
+			system("pause >nul");
+			return false;
 		}
 		if ((math_sign == '-') && (second_number < 0))
 		{
@@ -78,9 +75,11 @@ bool c_standard_calculator::enter_the_date(char* tab_math_sign, int tab_size)
 	return true;
 }
 
-bool c_standard_calculator::whether_exit(char sign)
+bool c_standard_calculator::whether_exit()
 {
-	if(sign == 'q')
+	cal.clear_screen();
+	cal.display_the_message("If you want to quit press \'q\'.");
+	if(_getch() == 'q')
 	{
 		return true;
 	}
@@ -93,7 +92,8 @@ bool c_standard_calculator::check_input()
 	{
 		cin.clear();
 		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		cout << "\nBad input value. Try again.\n";
+		cal.display_the_message("\nBad input value. Try again.\n");
+		system("pause >nul");
 		return false;
 	}
 	return true;

@@ -1,12 +1,41 @@
 #include "calculator.h"
+#include "advanced_calculator.h"
+#include "standard_calculator.h"
+#include <conio.h>
 
 /*
 	PUBLIC:
 */
 
-bool c_calculator::start_calculator_app()
+void c_calculator::start_calculator_app()
 {
-	return true;
+	do
+	{
+		clear_screen();
+		display_the_message("Choose calculator mode:\n1. Standard Calculator.\n2. Advanced Calculator.\n");
+		switch (_getch())
+		{
+
+		case '1':
+		{
+			c_standard_calculator o_standard_calculator;
+			o_standard_calculator.start_standard_calculator();
+		}break;
+
+		case '2':
+		{
+			c_advanced_calculator o_advanced_calculator;
+			o_advanced_calculator.start_advanced_calculator();
+		}break;
+
+		default:
+		{
+			NULL;
+		}break;
+
+		}
+	}
+	while (true);
 }
 
 /*
