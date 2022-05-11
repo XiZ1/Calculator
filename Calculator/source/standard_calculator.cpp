@@ -16,12 +16,12 @@ void c_standard_calculator::start_standard_calculator()
 	cal.clear_screen();
 	do
 	{
-		if(!enter_the_date())
+		if(!enter_the_date(tab_standard_math_sign, tab_size))
 		{
 			end_loop = false;
 			continue;
 		}
-		do_mathematical_operation(which_mathematical_operation());
+		do_mathematical_operation(which_mathematical_operation(tab_standard_math_sign, tab_size));
 		show_result();
 	}while (end_loop);
 }
@@ -30,7 +30,7 @@ void c_standard_calculator::start_standard_calculator()
 	PRIVATE:
 */
 
-bool c_standard_calculator::enter_the_date()
+bool c_standard_calculator::enter_the_date(char* tab_math_sign, int tab_size)
 {
 	bool is_loop_end = true;
 	do
@@ -54,7 +54,7 @@ bool c_standard_calculator::enter_the_date()
 			cal.display_the_message("\nEnter math sign: ");
 			cin >> math_sign;
 		}
-		while (!is_char());
+		while (!is_char(tab_math_sign, tab_size));
 		do
 		{
 			cal.clear_screen();
@@ -99,11 +99,14 @@ bool c_standard_calculator::check_input()
 	return true;
 }
 
-bool c_standard_calculator::is_char()
+bool c_standard_calculator::is_char(char* tab_math_sign, int tab_size)
 {
-	if ((math_sign == '+') || (math_sign == '-') || (math_sign == '*') || (math_sign == '/'))
+	for (int i = 0; i < tab_size; i++)
 	{
-		return true;
+		if (math_sign == tab_math_sign[i])
+		{
+			return true;
+		}
 	}
 	return false;
 }
@@ -117,23 +120,14 @@ bool c_standard_calculator::is_division_by_zero()
 	return false;
 }
 
-int c_standard_calculator::which_mathematical_operation()
+int c_standard_calculator::which_mathematical_operation(char* tab_math_sign, int tab_size)
 {
-	if (math_sign == '+')
+	for (auto i = 0; i < tab_size; i++)
 	{
-		return ADDITION;
-	}
-	if (math_sign == '-')
-	{
-		return SUBTRACTION;
-	}
-	if (math_sign == '*')
-	{
-		return MULTIPLICATION;
-	}
-	if (math_sign == '/')
-	{
-		return DIVISION;
+		if (math_sign == tab_math_sign[i])
+		{
+			return i;
+		}
 	}
 	return NULL;
 }

@@ -23,16 +23,18 @@ public:
 private:
 	c_calculator cal;
 
-	enum mathematical_operation { ADDITION = 1, SUBTRACTION = 2, MULTIPLICATION = 3, DIVISION = 4 };
+	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION };
 	float first_number, second_number, result;
 	char math_sign;
+	static const int tab_size = 4;
+	char tab_standard_math_sign[tab_size] = { '+', '-', '*', '/' };
 
-	bool enter_the_date();
+	bool enter_the_date(char* tab_math_sign, int tab_size);
 	bool whether_exit(char);
 	bool check_input();
-	bool is_char();
+	bool is_char(char* tab_math_sign, int tab_size);
 	bool is_division_by_zero();
-	int which_mathematical_operation();
+	int which_mathematical_operation(char* tab_math_sign, int tab_size);
 	float do_mathematical_operation(int);
 
 	float addition()

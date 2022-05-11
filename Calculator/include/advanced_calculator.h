@@ -23,10 +23,10 @@ private:
 	c_calculator cal;
 	c_standard_calculator std_cal;
 
-	enum mathematical_operation { ADDITION = 1, SUBTRACTION = 2, MULTIPLICATION = 3, DIVISION = 4 };
+	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION };
+	static const int tab_size = 4;
+	char tab_advanced_math_sign[tab_size] = { '+', '-', '*', '/' };
 
 	bool enter_the_date();
-	bool is_char();
-	int which_mathematical_operation();
 	float do_mathematical_operation(int);
 };
