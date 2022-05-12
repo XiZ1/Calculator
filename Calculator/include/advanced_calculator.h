@@ -16,7 +16,6 @@ class c_advanced_calculator
 {
 public:
 
-
 	void start_advanced_calculator();
 
 private:

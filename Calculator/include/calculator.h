@@ -9,12 +9,14 @@ using std::string;
 
 class c_standard_calculator;
 class c_advanced_calculator;
+class c_developer_calculator;
 
 class c_calculator
 {
 public:
 	friend class c_standard_calculator;
 	friend class c_advanced_calculator;
+	friend class c_developer_calculator;
 
 	void start_calculator_app();
 

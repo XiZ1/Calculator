@@ -1,6 +1,7 @@
 #include "calculator.h"
-#include "advanced_calculator.h"
 #include "standard_calculator.h"
+#include "advanced_calculator.h"
+#include "developer_calculator.h"
 #include <conio.h>
 
 /*
@@ -26,6 +27,12 @@ void c_calculator::start_calculator_app()
 		{
 			c_advanced_calculator o_advanced_calculator;
 			o_advanced_calculator.start_advanced_calculator();
+		}break;
+
+		case '3':
+		{
+			c_developer_calculator o_developer_calculator;
+			o_developer_calculator.start_developer_calculator();
 		}break;
 
 		default:
