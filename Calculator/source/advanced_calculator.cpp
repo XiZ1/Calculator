@@ -1,5 +1,4 @@
 #include "advanced_calculator.h"
-#include <conio.h>
 
 /*
 	PUBLIC:
