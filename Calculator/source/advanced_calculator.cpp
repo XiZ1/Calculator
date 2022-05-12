@@ -16,7 +16,7 @@ void c_advanced_calculator::start_advanced_calculator()
 			continue;
 		}
 		cal.clear_screen();
-		cal.display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\n");
+		cal.display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'|\' - Element\n\'^\' - Involution\n\n");
 		if (!std_cal.enter_the_date(tab_advanced_math_sign, tab_size))
 		{
 			continue;
@@ -52,6 +52,16 @@ float c_advanced_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 	case DIVISION:
 	{
 		return  std_cal.division();
+	}
+
+	case ELEMENT:
+	{
+		return element();
+	}
+
+	case INVOLUTION:
+	{
+		return involution();
 	}
 
 	default:

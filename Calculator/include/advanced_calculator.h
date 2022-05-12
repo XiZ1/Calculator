@@ -23,9 +23,18 @@ private:
 	c_calculator cal;
 	c_standard_calculator std_cal;
 
-	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION };
-	static const int tab_size = 4;
-	char tab_advanced_math_sign[tab_size] = { '+', '-', '*', '/' };
+	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, ELEMENT, INVOLUTION };
+	static constexpr int tab_size = 6;
+	char tab_advanced_math_sign[tab_size] = { '+', '-', '*', '/', '|', '^'};
 
 	float do_mathematical_operation(int);
+
+	float element()
+	{
+		return std_cal.first_number * sqrt(std_cal.second_number);
+	}
+	float involution()
+	{
+		return pow(std_cal.first_number, std_cal.second_number);
+	}
 };

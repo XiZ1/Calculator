@@ -26,7 +26,7 @@ private:
 	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION };
 	float first_number, second_number, result;
 	char math_sign;
-	static const int tab_size = 4;
+	static constexpr int tab_size = 4;
 	char tab_standard_math_sign[tab_size] = { '+', '-', '*', '/' };
 
 	bool enter_the_date(char* tab_math_sign, int tab_size);
