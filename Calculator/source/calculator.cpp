@@ -2,6 +2,7 @@
 #include "standard_calculator.h"
 #include "advanced_calculator.h"
 #include "developer_calculator.h"
+#include "unit_conversion_calculator.h"
 #include <conio.h>
 
 /*
@@ -33,6 +34,12 @@ void c_calculator::start_calculator_app()
 		{
 			c_developer_calculator o_developer_calculator;
 			o_developer_calculator.start_developer_calculator();
+		}break;
+
+		case '4':
+		{
+			c_unit_conversion_calculator o_unit_conversion_calculator;
+			o_unit_conversion_calculator.start_unit_conversion_calculator();
 		}break;
 
 		default:

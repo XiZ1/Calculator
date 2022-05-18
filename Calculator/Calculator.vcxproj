@@ -148,12 +148,14 @@
     <ClCompile Include="source\developer_calculator.cpp" />
     <ClCompile Include="source\standard_calculator.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\unit_conversion_calculator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\advanced_calculator.h" />
     <ClInclude Include="include\calculator.h" />
     <ClInclude Include="include\developer_calculator.h" />
     <ClInclude Include="include\standard_calculator.h" />
+    <ClInclude Include="include\unit_conversion_calculator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
