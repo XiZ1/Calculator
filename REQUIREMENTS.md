@@ -1,0 +1,113 @@
+CALCULATOR REQUIREMENTS:
+
+CALCULATOR MODULE:
+	
+	STANDARD CALCULATOR
+		ADDITION
+		SUBTRACTION
+		MULTIPLICATION
+		DIVISION
+
+	ADVANCED CALCULATOR
+		ADDITION
+		SUBTRACTION
+		MULTIPLICATION
+		DIVISION
+		SQUARE ROOT
+		EXPONENTIATION
+
+	DEVELOPER CALCULATOR
+		CONVERSION OF NUMBER SYSTEMS
+			BIN TO:
+				DEC
+				OCT
+				HEX
+	
+			DEC TO:
+				BIN
+				OCT
+				HEX
+
+			OCT TO:
+				BIN
+				DEC
+				HEX
+
+			HEX TO:
+				BIN
+				DEC
+				OCT		
+
+	UNIT CONVERSION CALCULATOR
+		CONVERSION FROM UNITS OF LENGTH:
+			MM TO:
+				CM
+				DM
+				M
+				KM
+
+			CM TO:
+				MM
+				DM
+				M
+				KM
+
+			DM TO:
+				MM
+				CM
+				M
+				KM
+
+			M TO:
+				MM
+				CM
+				DM
+				KM
+
+			KM TO:
+				MM
+				CM
+				DM
+				M	
+
+		CONVERSION FROM UNITS OF MASS:
+			G TO:
+				DAG
+				KG
+				T
+
+			DAG TO:
+				G
+				KG
+				T
+
+			KG TO:
+				G
+				DAG
+				T
+
+			T TO:
+				G
+				DAG
+				KG			
+
+		CONVERSION FROM UNITS OF VOLUME:
+			ML TO:
+				CL
+				DL
+				L
+
+			CL TO:
+				ML
+				DL
+				L
+
+			DL TO:
+				ML
+				CL
+				L
+
+			L TO:
+				ML
+				CL
+				DL			
