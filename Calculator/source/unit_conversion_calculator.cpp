@@ -27,7 +27,9 @@ void c_unit_conversion_calculator::start_unit_conversion_calculator()
 
 void c_unit_conversion_calculator::choose_conversion_units()
 {
-	switch (_getch())
+	int choise = -1;
+	cin >> choise;
+	switch (choise)
 	{
 		case LENGTH:
 		{
@@ -82,11 +84,11 @@ void c_unit_conversion_calculator::start_mass_conversion()
 			continue;
 		}
 		cal.clear_screen();
-		cal.display_the_message("Choose which unit you want to conversion:\n0. Millimeter [mm]\n1. Centimeter [cm]\n2. Decimeter [dm]\n3. Meter [m]\n4. Kilometer [km]\n5. EXIT");
+		cal.display_the_message("Choose which unit you want to conversion:\n0. Gram [g]\n1. Decagram [dag]\n2. Kilogram [kg]\n3. Ton [t]\n4. EXIT");
 		const int utc = choose_unit();
 		create_unit_name_tab(tab_mass_units_names, tab_other_unit_size, utc);
 		get_unit_value(unit);
-		//TODO: CREATE CONVERSION FUNCTION
+		unit_mass_convert(result_conversion, utc);
 		show_result_conversion();
 	} while (end_loop);
 }
@@ -102,18 +104,19 @@ void c_unit_conversion_calculator::start_volume_conversion()
 			continue;
 		}
 		cal.clear_screen();
-		cal.display_the_message("Choose which unit you want to conversion:\n0. Millimeter [mm]\n1. Centimeter [cm]\n2. Decimeter [dm]\n3. Meter [m]\n4. Kilometer [km]\n5. EXIT");
+		cal.display_the_message("Choose which unit you want to conversion:\n0. Milliliter [ml]\n1. Centiliter [cl]\n2. Deciliter [dl]\n3. Liter [l]\n4. EXIT");
 		const int utc = choose_unit();
 		create_unit_name_tab(tab_volume_units_names, tab_other_unit_size, utc);
 		get_unit_value(unit);
-		//TODO: CREATE CONVERSION FUNCTION
+		unit_volume_convert(result_conversion, utc);
 		show_result_conversion();
 	} while (end_loop);
 }
 
 int c_unit_conversion_calculator::choose_unit()
 {
-	const int utc = _getch();
+	int utc = -1;
+	cin >> utc;
 	return utc;
 }
 
@@ -136,7 +139,7 @@ void c_unit_conversion_calculator::get_unit_value(float& u)
 	cin >> u;
 }
 
-void c_unit_conversion_calculator::unit_length_convert(std::vector<float>& res_con, const int unit_length_to_conversion)
+void c_unit_conversion_calculator::unit_length_convert(std::vector<float>& res_con, const int& unit_length_to_conversion)
 {
 	result_conversion.clear();
 	switch (unit_length_to_conversion)
@@ -185,6 +188,86 @@ void c_unit_conversion_calculator::unit_length_convert(std::vector<float>& res_c
 		{
 			NULL;
 		}break;
+	}
+}
+
+void c_unit_conversion_calculator::unit_mass_convert(std::vector<float>& res_con, const int& unit_mass_to_conversion)
+{
+	result_conversion.clear();
+	switch (unit_mass_to_conversion)
+	{
+	case g:
+	{
+		res_con.push_back(unit / 10);
+		res_con.push_back(unit / 1000);
+		res_con.push_back(unit / 1000000);
+	}break;
+
+	case dag:
+	{
+		res_con.push_back(unit * 10);
+		res_con.push_back(unit / 100);
+		res_con.push_back(unit / 100000);
+	}break;
+
+	case kg:
+	{
+		res_con.push_back(unit * 1000);
+		res_con.push_back(unit * 100);
+		res_con.push_back(unit / 1000);
+	}break;
+
+	case t:
+	{
+		res_con.push_back(unit * 1000000);
+		res_con.push_back(unit * 100000);
+		res_con.push_back(unit * 1000);
+	}break;
+
+	default:
+	{
+		NULL;
+	}break;
+	}
+}
+
+void c_unit_conversion_calculator::unit_volume_convert(std::vector<float>& res_con, const int& unit_volume_to_conversion)
+{
+	result_conversion.clear();
+	switch (unit_volume_to_conversion)
+	{
+	case ml:
+	{
+		res_con.push_back(unit / 10);
+		res_con.push_back(unit / 100);
+		res_con.push_back(unit / 1000);
+	}break;
+
+	case cl:
+	{
+		res_con.push_back(unit * 10);
+		res_con.push_back(unit / 10);
+		res_con.push_back(unit / 100);
+	}break;
+
+	case dl:
+	{
+		res_con.push_back(unit * 100);
+		res_con.push_back(unit * 10);
+		res_con.push_back(unit / 10);
+	}break;
+
+	case l:
+	{
+		res_con.push_back(unit * 1000);
+		res_con.push_back(unit * 100);
+		res_con.push_back(unit * 10);
+	}break;	
+
+	default:
+	{
+		NULL;
+	}break;
 	}
 }
 

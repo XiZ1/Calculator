@@ -39,13 +39,18 @@ private:
 
 
 	void choose_conversion_units();
+
+	static int choose_unit();
+	void create_unit_name_tab(const string [], const int&, const int&);
+	void get_unit_value(float&);
+	void show_result_conversion();
+	bool whether_exit();
+
 	void start_length_conversion();
 	void start_mass_conversion();
 	void start_volume_conversion();
-	int choose_unit();
-	void create_unit_name_tab(const string [], const int&, const int&);
-	void get_unit_value(float&);
-	void unit_length_convert(std::vector<float>&, const int);
-	void show_result_conversion();
-	bool whether_exit();
+
+	void unit_length_convert(std::vector<float>&, const int&);
+	void unit_mass_convert(std::vector<float>&, const int&);
+	void unit_volume_convert(std::vector<float>&, const int&);
 };

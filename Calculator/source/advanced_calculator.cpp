@@ -33,39 +33,39 @@ float c_advanced_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 {
 	switch (MATHEMATICAL_OPERATION)
 	{
-	case ADDITION:
-	{
-		return std_cal.addition();
-	}
+		case ADDITION:
+		{
+			return std_cal.addition();
+		}
 
-	case SUBTRACTION:
-	{
-		return  std_cal.subtraction();
-	}
+		case SUBTRACTION:
+		{
+			return  std_cal.subtraction();
+		}
 
-	case MULTIPLICATION:
-	{
-		return  std_cal.multiplication();
-	}
+		case MULTIPLICATION:
+		{
+			return  std_cal.multiplication();
+		}
 
-	case DIVISION:
-	{
-		return  std_cal.division();
-	}
+		case DIVISION:
+		{
+			return  std_cal.division();
+		}
 
-	case ELEMENT:
-	{
-		return element();
-	}
+		case ELEMENT:
+		{
+			return element();
+		}
 
-	case INVOLUTION:
-	{
-		return involution();
-	}
+		case INVOLUTION:
+		{
+			return involution();
+		}
 
-	default:
-	{
-		return NULL;
-	}
+		default:
+		{
+			return NULL;
+		}
 	}
 }
