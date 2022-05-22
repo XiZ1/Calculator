@@ -18,8 +18,6 @@ public:
 
 
 private:
-	c_calculator cal;
-
 	enum UNITS_NAME {LENGTH, MASS, VOLUME};
 	enum LENGTH_UNIT {mm, cm, dm, m, km};
 	enum MASS_UNIT { g, dag, kg, t };
@@ -44,7 +42,6 @@ private:
 	void create_unit_name_tab(const string [], const int&, const int&);
 	void get_unit_value(float&);
 	void show_result_conversion();
-	bool whether_exit();
 
 	void start_length_conversion();
 	void start_mass_conversion();

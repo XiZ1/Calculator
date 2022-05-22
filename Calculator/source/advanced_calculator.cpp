@@ -9,13 +9,13 @@ void c_advanced_calculator::start_advanced_calculator()
 	bool end_loop = true;
 	do
 	{
-		if (std_cal.whether_exit())
+		if (!c_calculator::whether_exit())
 		{
 			end_loop = false;
 			continue;
 		}
-		cal.clear_screen();
-		cal.display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'|\' - Element\n\'^\' - Involution\n\n");
+		c_calculator::clear_screen();
+		c_calculator::display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'|\' - Element\n\'^\' - Involution\n\n");
 		if (!std_cal.enter_the_date(tab_advanced_math_sign, tab_size))
 		{
 			continue;

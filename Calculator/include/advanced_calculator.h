@@ -15,11 +15,9 @@ class c_standard_calculator;
 class c_advanced_calculator
 {
 public:
-
 	void start_advanced_calculator();
 
 private:
-	c_calculator cal;
 	c_standard_calculator std_cal;
 
 	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, ELEMENT, INVOLUTION };

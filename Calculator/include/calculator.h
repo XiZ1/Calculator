@@ -20,9 +20,10 @@ public:
 	friend class c_developer_calculator;
 	friend class c_unit_conversion_calculator;
 
-	void start_calculator_app();
+	static void start_calculator_app();
 
 private:
-	void display_the_message(string);
-	void clear_screen();
+	static void display_the_message(string);
+	static void clear_screen();
+	static bool whether_exit();
 };

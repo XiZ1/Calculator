@@ -68,3 +68,14 @@ void c_calculator::clear_screen()
 {
 	system("cls");
 }
+
+bool c_calculator::whether_exit()
+{
+	clear_screen();
+	display_the_message("Do you want to exit y/n ?\n");
+	if (_getch() == 'y')
+	{
+		return false;
+	}
+	return true;
+}

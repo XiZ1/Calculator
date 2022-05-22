@@ -2,8 +2,7 @@
 
 int main()
 {
-	c_calculator o_calculator;
-	o_calculator.start_calculator_app();
+	c_calculator::start_calculator_app();
 
 	return 0;
 }
