@@ -18,9 +18,14 @@ public:
 private:
 	enum NUMBERS_SYSTEM{BIN, OCT, DEC, HEX};
 	int number = 0;
+	string str_num;
 
 	void choose_number_system_conversion();
-	void get_number(int&);
+	static void get_number(int&);
+	static void get_number(string&);
 	void convert(NUMBERS_SYSTEM);
+	int oct_to_bin(int);
+	int dec_to_bin(int);
+	void hex_to_bin(string);
 
 };
