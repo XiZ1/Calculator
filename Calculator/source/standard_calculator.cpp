@@ -20,7 +20,7 @@ void c_standard_calculator::start_standard_calculator()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("STANDARD CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\n");
+		c_calculator::display_the_message("STANDARD CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'%\' - Modulo\n\'$\' - Square root\n\n");
 		if(!enter_the_date(tab_standard_math_sign, tab_size))
 		{
 			continue;
@@ -142,6 +142,16 @@ float c_standard_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 		case DIVISION:
 		{
 			return  division();
+		}
+
+		case MODULO:
+		{
+			return modulo();
+		}
+
+		case SQUARE_ROOT:
+		{
+			return square_root();
 		}
 
 		default:

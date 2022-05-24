@@ -21,11 +21,11 @@ public:
 	void start_standard_calculator();
 
 private:
-	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION };
+	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, MODULO, SQUARE_ROOT };
 	float first_number, second_number, result;
 	char math_sign;
-	static constexpr int tab_size = 4;
-	char tab_standard_math_sign[tab_size] = { '+', '-', '*', '/' };
+	static constexpr int tab_size = 6;
+	char tab_standard_math_sign[tab_size] = { '+', '-', '*', '/', '%', '$'};
 
 	bool enter_the_date(char* tab_math_sign, int tab_size);
 	bool check_input();
@@ -49,6 +49,14 @@ private:
 	float division()
 	{
 		return result = first_number / second_number;
+	}
+	float modulo()
+	{
+		return  result = fmod(first_number, second_number);
+	}
+	float square_root()
+	{
+		return result = first_number * sqrt(second_number);
 	}
 
 	void show_result();
