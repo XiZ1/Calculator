@@ -15,7 +15,7 @@ void c_advanced_calculator::start_advanced_calculator()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'|\' - Element\n\'^\' - Involution\n\n");
+		c_calculator::display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'%\' - Modulo\n\'$\' - Square root\n\'#\' - Cube root\n\'^\' - Exponentiation\n\'L\' - Logarithm\n\'S\' - Sinus\n\'C\' - Cosinus\n\'T\' - Tangens\n\n");
 		if (!std_cal.enter_the_date(tab_advanced_math_sign, tab_size))
 		{
 			continue;
@@ -53,14 +53,44 @@ float c_advanced_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 			return  std_cal.division();
 		}
 
-		case ELEMENT:
+		case MODULO:
 		{
-			return element();
+			return std_cal.modulo();
 		}
 
-		case INVOLUTION:
+		case SQUARE_ROOT:
 		{
-			return involution();
+			return std_cal.square_root();
+		}
+
+		case CUBE_ROOT:
+		{
+			return cube_root();
+		}
+
+		case EXPONENTIATION:
+		{
+			return exponentiation();
+		}
+
+		case LOGARITHM:
+		{
+			return logarithm();
+		}
+
+		case SIN:
+		{
+			return sin();
+		}
+
+		case COS:
+		{
+			return cos();
+		}
+
+		case TAN:
+		{
+			return tan();
 		}
 
 		default:
