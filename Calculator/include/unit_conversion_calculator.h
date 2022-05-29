@@ -18,30 +18,30 @@ public:
 
 
 private:
-	enum UNITS_NAME {LENGTH, MASS, VOLUME};
-	enum LENGTH_UNIT {mm, cm, dm, m, km};
-	enum MASS_UNIT { g, dag, kg, t };
-	enum VOLUME_UNIT {ml, cl, dl, l};
+	enum units_name {LENGTH, MASS, VOLUME};
+	enum length_unit {MM, CM, DM, M, KM};
+	enum mass_unit { G, DAG, KG, T };
+	enum volume_unit {ML, CL, DL, L};
 
-	float unit = 0;
+	float unit_ = 0;
 
 	static constexpr int tab_length_unit_size{ 5 };
 	static constexpr int tab_other_unit_size{ 4 };
 
-	const string tab_length_units_names[tab_length_unit_size]{ "mm", "cm", "dm", "m", "km" };
-	const string tab_mass_units_names[tab_other_unit_size]{ "g", "dag", "kg", "t" };
-	const string tab_volume_units_names[tab_other_unit_size]{ "ml", "cl", "dl", "l" };
+	const string tab_length_units_names_[tab_length_unit_size]{ "mm", "cm", "dm", "m", "km" };
+	const string tab_mass_units_names_[tab_other_unit_size]{ "g", "dag", "kg", "t" };
+	const string tab_volume_units_names_[tab_other_unit_size]{ "ml", "cl", "dl", "l" };
 
-	std::vector<float> result_conversion;
-	std::vector<string> tab_res_con_unit_name;
+	std::vector<float> result_conversion_;
+	std::vector<string> tab_res_con_unit_name_;
 
 
 	void choose_conversion_units();
 
 	static int choose_unit();
 	void create_unit_name_tab(const string [], const int&, const int&);
-	void get_unit_value(float&);
-	void show_result_conversion();
+	static void get_unit_value(float&);
+	void show_result_conversion() const;
 
 	void start_length_conversion();
 	void start_mass_conversion();

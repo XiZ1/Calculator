@@ -62,11 +62,7 @@ bool c_standard_calculator::enter_the_date(const char* tab_math_sign, const int 
 		{
 			return false;
 		}
-		if ((math_sign_ == '-') && (second_number_ < 0)) //TODO: napisac do tego funckje 
-		{
-			math_sign_ = '+';
-			second_number_ = abs(second_number_);
-		}
+		whether_it_subtracts_a_negative_number();
 		is_loop_end = false;
 	}while (is_loop_end);
 	return true;
@@ -108,6 +104,15 @@ bool c_standard_calculator::is_division_by_zero() const
 		return true;
 	}
 	return false;
+}
+
+void c_standard_calculator::whether_it_subtracts_a_negative_number()
+{
+	if ((math_sign_ == '-') && (second_number_ < 0))
+	{
+		math_sign_ = '+';
+		second_number_ = abs(second_number_);
+	}
 }
 
 int c_standard_calculator::which_mathematical_operation(const char* tab_math_sign, const int t_size) const

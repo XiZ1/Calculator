@@ -32,25 +32,25 @@ void c_developer_calculator::choose_number_system_conversion()
 	{
 		case BIN:
 		{
-			get_number(number);
+			get_number(number_);
 			convert(BIN);
 		}break;
 
 		case OCT:
 		{
-			get_number(number);
+			get_number(number_);
 			convert(OCT);
 		}break;
 
 		case DEC:
 		{
-			get_number(number);
+			get_number(number_);
 			convert(DEC);
 		}break;
 
 		case HEX:
 		{
-			get_number(str_num);
+			get_number(str_num_);
 			convert(HEX);
 		}break;
 
@@ -75,63 +75,64 @@ void c_developer_calculator::get_number(string& n)
 	cin >> n;
 }
 
-void c_developer_calculator::convert(const NUMBERS_SYSTEM choose)
+void c_developer_calculator::convert(const numbers_system choose) const
 {
 	switch (choose)
 	{
 		case BIN:
 		{
-			cout << std::oct << number << "\n";
-			cout << std::dec << number << "\n";
-			cout << std::hex << number << "\n";
+			cout << std::oct << number_ << "\n";
+			cout << std::dec << number_ << "\n";
+			cout << std::hex << number_ << "\n";
 		}break;
 
 		case OCT:
 		{
-			cout << oct_to_bin(number) << "\n";
-			cout << std::dec << number << "\n";
-			cout << std::hex << number << "\n";
+			cout << oct_to_bin(number_) << "\n";
+			cout << std::dec << number_ << "\n";
+			cout << std::hex << number_ << "\n";
 		}break;
 
 		case DEC:
 		{
-			cout << dec_to_bin(number) << "\n";
-			cout << std::oct << number << "\n";
-			cout << std::hex << number << "\n";
+			cout << dec_to_bin(number_) << "\n";
+			cout << std::oct << number_ << "\n";
+			cout << std::hex << number_ << "\n";
 		}break;
 
 		case HEX:
 		{
-			hex_to_bin(str_num);
-			cout << std::oct << str_num << "\n";
-			cout << std::dec << str_num << "\n";
+			hex_to_bin(str_num_);
+			cout << std::oct << str_num_ << "\n";
+			cout << std::dec << str_num_ << "\n";
 		}break;
 	}
 }
 
-int c_developer_calculator::oct_to_bin(int oct_num)
+int c_developer_calculator::oct_to_bin(int oct_num) const
 {
-	int decimalNum = 0, binaryNum = 0, count = 0;
+	int decimal_num = 0, binary_num = 0, count = 0;
 	
 	while (oct_num != 0) {
-		decimalNum += (oct_num % 10) * pow(8, count);
+		// ReSharper disable once CppRedundantParentheses
+		decimal_num += (oct_num % 10) * pow(8, count);  // NOLINT(cppcoreguidelines-narrowing-conversions)
 		++count;
 		oct_num /= 10;
 	}
 	count = 1;
-	while (decimalNum != 0) {
-		binaryNum += (decimalNum % 2) * count;
-		decimalNum /= 2;
+	while (decimal_num != 0) {
+		binary_num += (decimal_num % 2) * count;
+		decimal_num /= 2;
 		count *= 10;
 	}
-	return binaryNum;
+	return binary_num;
 }
 
 int c_developer_calculator::dec_to_bin(int decimal)
 {
 	int binary = 0, product = 1;
 	while (decimal != 0) {
-		int remainder = decimal % 2;
+		const int remainder = decimal % 2;
 		binary = binary + (remainder * product);
 		decimal = decimal / 2;
 		product *= 10;
@@ -139,7 +140,7 @@ int c_developer_calculator::dec_to_bin(int decimal)
 	return binary;
 }
 
-void c_developer_calculator::hex_to_bin(string number)
+void c_developer_calculator::hex_to_bin(const string& number)
 {
 	long int i = 0;
 

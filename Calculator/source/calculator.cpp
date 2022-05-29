@@ -10,7 +10,7 @@
 */
 
 void c_calculator::start_calculator_app()
-{
+{  // NOLINT(clang-diagnostic-missing-noreturn)
 	do
 	{
 		clear_screen();
@@ -64,7 +64,7 @@ void c_calculator::display_the_message(const string& message)
 	cout << message;
 }
 
-void c_calculator::clear_screen()//TODO: sprawdzic czy da sie zrobic czyszczenie ktore jest bezpieczne dla wielowatkowosci 
+void c_calculator::clear_screen()
 {
 	system("cls");
 }

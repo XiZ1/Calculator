@@ -29,9 +29,9 @@ void c_advanced_calculator::start_advanced_calculator()
 	PRIVATE:
 */
 
-float c_advanced_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATION)
+float c_advanced_calculator::do_mathematical_operation(const int mathematical_operation)
 {
-	switch (MATHEMATICAL_OPERATION)
+	switch (mathematical_operation)
 	{
 		case ADDITION:
 		{

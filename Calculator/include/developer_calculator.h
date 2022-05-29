@@ -16,16 +16,16 @@ public:
 	void start_developer_calculator();
 
 private:
-	enum NUMBERS_SYSTEM{BIN, OCT, DEC, HEX};
-	int number = 0;
-	string str_num;
+	enum numbers_system{BIN, OCT, DEC, HEX};
+	int number_ = 0;
+	string str_num_;
 
 	void choose_number_system_conversion();
 	static void get_number(int&);
 	static void get_number(string&);
-	void convert(NUMBERS_SYSTEM);
-	int oct_to_bin(int);
-	int dec_to_bin(int);
-	void hex_to_bin(string);
+	void convert(numbers_system) const;
+	int oct_to_bin(int) const;
+	static int dec_to_bin(int);
+	static void hex_to_bin(const string&);
 
 };

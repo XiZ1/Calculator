@@ -31,6 +31,7 @@ private:
 	static bool check_input();
 	bool is_char(const char* tab_math_sign, int table_size) const;
 	bool is_division_by_zero() const;
+	void whether_it_subtracts_a_negative_number();
 	int which_mathematical_operation(const char* tab_math_sign, int t_size) const;
 	float do_mathematical_operation(int);
 
