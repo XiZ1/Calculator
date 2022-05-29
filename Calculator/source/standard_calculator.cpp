@@ -5,7 +5,7 @@
 	PUBLIC:
 */
 
-c_standard_calculator::c_standard_calculator(float f_number, float s_number, float res, char sign) : first_number(f_number), second_number(s_number), result(res), math_sign(sign)
+c_standard_calculator::c_standard_calculator(const float f_number, const float s_number, const float res, const char sign) : first_number_(f_number), second_number_(s_number), result_(res), math_sign_(sign)
 {
 }
 
@@ -21,11 +21,11 @@ void c_standard_calculator::start_standard_calculator()
 		}
 		c_calculator::clear_screen();
 		c_calculator::display_the_message("STANDARD CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'%\' - Modulo\n\'$\' - Square root\n\n");
-		if(!enter_the_date(tab_standard_math_sign, tab_size))
+		if(!enter_the_date(tab_standard_math_sign_, tab_size))
 		{
 			continue;
 		}
-		do_mathematical_operation(which_mathematical_operation(tab_standard_math_sign, tab_size));
+		do_mathematical_operation(which_mathematical_operation(tab_standard_math_sign_, tab_size));
 		show_result();
 	}while (end_loop);
 }
@@ -34,40 +34,38 @@ void c_standard_calculator::start_standard_calculator()
 	PRIVATE:
 */
 
-bool c_standard_calculator::enter_the_date(char* tab_math_sign, int tab_size)
+bool c_standard_calculator::enter_the_date(const char* tab_math_sign, const int t_size)
 {
-	bool is_loop_end = true;
+	// ReSharper disable once CppInitializedValueIsAlwaysRewritten
+	auto is_loop_end = true;
 	do
 	{
 		do
 		{
 			c_calculator::display_the_message("Enter first number: ");
-			cin >> first_number;
+			cin >> first_number_;
 		}
 		while (!check_input());
 		do
 		{
 			c_calculator::display_the_message("\nEnter math sign: ");
-			cin >> math_sign;
+			cin >> math_sign_;
 		}
-		while (!is_char(tab_math_sign, tab_size));
+		while (!is_char(tab_math_sign, t_size));
 		do
 		{
 			c_calculator::display_the_message("\nEnter second number: ");
-			cin >> second_number;
+			cin >> second_number_;
 		}
 		while (!check_input());
 		if (is_division_by_zero())
 		{
-			c_calculator::clear_screen();
-			c_calculator::display_the_message("Mistake! Division by zero.");
-			system("pause >nul");
 			return false;
 		}
-		if ((math_sign == '-') && (second_number < 0))
+		if ((math_sign_ == '-') && (second_number_ < 0)) //TODO: napisac do tego funckje 
 		{
-			math_sign = '+';
-			second_number = abs(second_number);
+			math_sign_ = '+';
+			second_number_ = abs(second_number_);
 		}
 		is_loop_end = false;
 	}while (is_loop_end);
@@ -80,18 +78,19 @@ bool c_standard_calculator::check_input()
 	{
 		cin.clear();
 		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		c_calculator::clear_screen();
 		c_calculator::display_the_message("\nBad input value. Try again.\n");
-		system("pause >nul");
+		system("pause");
 		return false;
 	}
 	return true;
 }
 
-bool c_standard_calculator::is_char(char* tab_math_sign, int tab_size)
+bool c_standard_calculator::is_char(const char* tab_math_sign, const int table_size) const
 {
-	for (int i = 0; i < tab_size; i++)
+	for (int i = 0; i < table_size; i++)
 	{
-		if (math_sign == tab_math_sign[i])
+		if (math_sign_ == tab_math_sign[i])
 		{
 			return true;
 		}
@@ -99,30 +98,33 @@ bool c_standard_calculator::is_char(char* tab_math_sign, int tab_size)
 	return false;
 }
 
-bool c_standard_calculator::is_division_by_zero()
+bool c_standard_calculator::is_division_by_zero() const
 {
-	if ((math_sign == '/') && (second_number == (float)0))
+	if ((math_sign_ == '/') && (second_number_ == static_cast<float>(0)))  // NOLINT(clang-diagnostic-float-equal)
 	{
+		c_calculator::clear_screen();
+		c_calculator::display_the_message("Mistake! Division by zero.");
+		system("pause");
 		return true;
 	}
 	return false;
 }
 
-int c_standard_calculator::which_mathematical_operation(char* tab_math_sign, int tab_size)
+int c_standard_calculator::which_mathematical_operation(const char* tab_math_sign, const int t_size) const
 {
-	for (auto i = 0; i < tab_size; i++)
+	for (auto i = 0; i < t_size; i++)
 	{
-		if (math_sign == tab_math_sign[i])
+		if (math_sign_ == tab_math_sign[i])
 		{
 			return i;
 		}
 	}
-	return NULL;
+	return -1;
 }
 
-float c_standard_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATION)
+float c_standard_calculator::do_mathematical_operation(const int mathematical_operation)
 {
-	switch (MATHEMATICAL_OPERATION)
+	switch (mathematical_operation)
 	{
 		case ADDITION:
 		{
@@ -161,9 +163,9 @@ float c_standard_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 	}
 }
 
-void c_standard_calculator::show_result()
+void c_standard_calculator::show_result() const
 {
 	c_calculator::clear_screen();
-	cout << first_number << " " << math_sign << " " << second_number << " = " << result << '\n';
-	system("pause >nul");
+	cout << first_number_ << " " << math_sign_ << " " << second_number_ << " = " << result_ << '\n';
+	system("pause");
 }

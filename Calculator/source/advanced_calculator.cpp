@@ -15,13 +15,13 @@ void c_advanced_calculator::start_advanced_calculator()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'%\' - Modulo\n\'$\' - Square root\n\'#\' - Cube root\n\'^\' - Exponentiation\n\'L\' - Logarithm\n\'S\' - Sinus\n\'C\' - Cosinus\n\'T\' - Tangens\n\n");
-		if (!std_cal.enter_the_date(tab_advanced_math_sign, tab_size))
+		c_calculator::display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'%\' - Modulo\n\'$\' - Square root\n\'#\' - Cube root\n\'^\' - Exponentiation\n\'L\' - Logarithm\n\'S\' - Sinus\n\'C\' - Co-sinus\n\'T\' - Tang-ens\n\n");
+		if (!std_cal_.enter_the_date(tab_advanced_math_sign_, tab_size))
 		{
 			continue;
 		}
-		do_mathematical_operation(std_cal.which_mathematical_operation(tab_advanced_math_sign, tab_size));
-		std_cal.show_result();
+		do_mathematical_operation(std_cal_.which_mathematical_operation(tab_advanced_math_sign_, tab_size));
+		std_cal_.show_result();
 	} while (end_loop);
 }
 
@@ -35,32 +35,32 @@ float c_advanced_calculator::do_mathematical_operation(int MATHEMATICAL_OPERATIO
 	{
 		case ADDITION:
 		{
-			return std_cal.addition();
+			return std_cal_.addition();
 		}
 
 		case SUBTRACTION:
 		{
-			return  std_cal.subtraction();
+			return  std_cal_.subtraction();
 		}
 
 		case MULTIPLICATION:
 		{
-			return  std_cal.multiplication();
+			return  std_cal_.multiplication();
 		}
 
 		case DIVISION:
 		{
-			return  std_cal.division();
+			return  std_cal_.division();
 		}
 
 		case MODULO:
 		{
-			return std_cal.modulo();
+			return std_cal_.modulo();
 		}
 
 		case SQUARE_ROOT:
 		{
-			return std_cal.square_root();
+			return std_cal_.square_root();
 		}
 
 		case CUBE_ROOT:

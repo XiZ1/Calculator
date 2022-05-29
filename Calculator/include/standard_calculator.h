@@ -22,42 +22,42 @@ public:
 
 private:
 	enum mathematical_operation { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, MODULO, SQUARE_ROOT };
-	float first_number, second_number, result;
-	char math_sign;
+	float first_number_, second_number_, result_;
+	char math_sign_;
 	static constexpr int tab_size = 6;
-	char tab_standard_math_sign[tab_size] = { '+', '-', '*', '/', '%', '$'};
+	char tab_standard_math_sign_[tab_size] = { '+', '-', '*', '/', '%', '$'};
 
-	bool enter_the_date(char* tab_math_sign, int tab_size);
-	bool check_input();
-	bool is_char(char* tab_math_sign, int tab_size);
-	bool is_division_by_zero();
-	int which_mathematical_operation(char* tab_math_sign, int tab_size);
+	bool enter_the_date(const char* tab_math_sign, int t_size);
+	static bool check_input();
+	bool is_char(const char* tab_math_sign, int table_size) const;
+	bool is_division_by_zero() const;
+	int which_mathematical_operation(const char* tab_math_sign, int t_size) const;
 	float do_mathematical_operation(int);
 
 	float addition()
 	{
-		return result = first_number + second_number;
+		return result_ = first_number_ + second_number_;
 	}
 	float subtraction()
 	{
-		return result = first_number - second_number;
+		return result_ = first_number_ - second_number_;
 	}
 	float multiplication()
 	{
-		return result = first_number * second_number;
+		return result_ = first_number_ * second_number_;
 	}
 	float division()
 	{
-		return result = first_number / second_number;
+		return result_ = first_number_ / second_number_;
 	}
 	float modulo()
 	{
-		return  result = fmod(first_number, second_number);
+		return  result_ = fmod(first_number_, second_number_);
 	}
 	float square_root()
 	{
-		return result = first_number * sqrt(second_number);
+		return result_ = first_number_ * sqrt(second_number_);
 	}
 
-	void show_result();
+	void show_result() const;
 };

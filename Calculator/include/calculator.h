@@ -23,7 +23,7 @@ public:
 	static void start_calculator_app();
 
 private:
-	static void display_the_message(string);
+	static void display_the_message(const string&);
 	static void clear_screen();
 	static bool whether_exit();
 };
