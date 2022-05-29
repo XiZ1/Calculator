@@ -143,7 +143,6 @@ int c_developer_calculator::dec_to_bin(int decimal)
 void c_developer_calculator::hex_to_bin(const string& number)
 {
 	long int i = 0;
-
 	c_calculator::clear_screen();
 	while (number[i]) {
 
