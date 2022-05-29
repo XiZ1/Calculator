@@ -15,7 +15,7 @@ void c_developer_calculator::start_developer_calculator()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("DEVELOPER CALCULATOR MODULE:\n0. BIN\n1. OCT\n2. DEC\n3. HEX\n");
+		c_calculator::display_the_message("DEVELOPER CALCULATOR MODULE:\n 0. BIN\n 1. OCT\n 2. DEC\n 3. HEX\n\n");
 		choose_number_system_conversion();
 	} while (end_loop);
 }
@@ -27,6 +27,7 @@ void c_developer_calculator::start_developer_calculator()
 void c_developer_calculator::choose_number_system_conversion()
 {
 	int choose = -1;
+	cout << "Enter the number module: ";
 	cin >> choose;
 	switch (choose)
 	{
@@ -84,6 +85,7 @@ void c_developer_calculator::convert(const numbers_system choose) const
 			cout << std::oct << number_ << "\n";
 			cout << std::dec << number_ << "\n";
 			cout << std::hex << number_ << "\n";
+			system("pause");
 		}break;
 
 		case OCT:
@@ -91,6 +93,7 @@ void c_developer_calculator::convert(const numbers_system choose) const
 			cout << oct_to_bin(number_) << "\n";
 			cout << std::dec << number_ << "\n";
 			cout << std::hex << number_ << "\n";
+			system("pause");
 		}break;
 
 		case DEC:
@@ -98,6 +101,7 @@ void c_developer_calculator::convert(const numbers_system choose) const
 			cout << dec_to_bin(number_) << "\n";
 			cout << std::oct << number_ << "\n";
 			cout << std::hex << number_ << "\n";
+			system("pause");
 		}break;
 
 		case HEX:
@@ -105,6 +109,7 @@ void c_developer_calculator::convert(const numbers_system choose) const
 			hex_to_bin(str_num_);
 			cout << std::oct << str_num_ << "\n";
 			cout << std::dec << str_num_ << "\n";
+			system("pause");
 		}break;
 	}
 }
@@ -146,64 +151,81 @@ void c_developer_calculator::hex_to_bin(const string& number)
 	c_calculator::clear_screen();
 	while (number[i]) {
 
-		switch (number[i]) {
-		case '0':
-			cout << "0000";
+		switch (number[i])
+		{
+			case '0':
+
+				cout << "0000";
 			break;
-		case '1':
-			cout << "0001";
+
+			case '1':
+				cout << "0001";
 			break;
-		case '2':
-			cout << "0010";
+
+			case '2':
+				cout << "0010";
 			break;
-		case '3':
-			cout << "0011";
+
+			case '3':
+				cout << "0011";
 			break;
-		case '4':
-			cout << "0100";
+
+			case '4':
+				cout << "0100";
 			break;
-		case '5':
-			cout << "0101";
+
+			case '5':
+				cout << "0101";
 			break;
-		case '6':
-			cout << "0110";
+
+			case '6':
+				cout << "0110";
 			break;
-		case '7':
-			cout << "0111";
+
+			case '7':
+				cout << "0111";
 			break;
-		case '8':
-			cout << "1000";
+
+			case '8':
+				cout << "1000";
 			break;
-		case '9':
-			cout << "1001";
+
+			case '9':
+				cout << "1001";
 			break;
-		case 'A':
-		case 'a':
-			cout << "1010";
+
+			case 'A':
+			case 'a':
+				cout << "1010";
 			break;
-		case 'B':
-		case 'b':
-			cout << "1011";
+
+			case 'B':
+			case 'b':
+				cout << "1011";
 			break;
-		case 'C':
-		case 'c':
-			cout << "1100";
+
+			case 'C':
+			case 'c':
+				cout << "1100";
 			break;
-		case 'D':
-		case 'd':
-			cout << "1101";
+
+			case 'D':
+			case 'd':
+				cout << "1101";
+				break;
+			case 'E':
+			case 'e':
+				cout << "1110";
 			break;
-		case 'E':
-		case 'e':
-			cout << "1110";
+
+			case 'F':
+			case 'f':
+				cout << "1111";
 			break;
-		case 'F':
-		case 'f':
-			cout << "1111";
+
+			default:
+				cout << "\nInvalid hexadecimal digit " << number[i];
 			break;
-		default:
-			cout << "\nInvalid hexadecimal digit "
-				<< number[i];
 		}
 		i++;
 	}

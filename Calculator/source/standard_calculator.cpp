@@ -20,7 +20,7 @@ void c_standard_calculator::start_standard_calculator()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("STANDARD CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'%\' - Modulo\n\'$\' - Square root\n\n");
+		c_calculator::display_the_message("STANDARD CALCULATOR\n\nAllowed math characters:\n \'+\' - Addition\n \'-\' - Subtraction\n \'*\' - Multiplication\n \'/\' - Division\n \'%\' - Modulo\n \'$\' - Square root\n\n");
 		if(!enter_the_date(tab_standard_math_sign_, tab_size))
 		{
 			continue;

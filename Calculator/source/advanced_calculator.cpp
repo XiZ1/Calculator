@@ -15,7 +15,7 @@ void c_advanced_calculator::start_advanced_calculator()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("ADVANCED CALCULATOR\nAllowed math characters:\n\'+\' - Addition\n\'-\' - Subtraction\n\'*\' - Multiplication\n\'/\' - Division\n\'%\' - Modulo\n\'$\' - Square root\n\'#\' - Cube root\n\'^\' - Exponentiation\n\'L\' - Logarithm\n\'S\' - Sinus\n\'C\' - Co-sinus\n\'T\' - Tang-ens\n\n");
+		c_calculator::display_the_message("ADVANCED CALCULATOR\n\nAllowed math characters:\n \'+\' - Addition\n \'-\' - Subtraction\n \'*\' - Multiplication\n \'/\' - Division\n \'%\' - Modulo\n \'$\' - Square root\n \'#\' - Cube root\n \'^\' - Exponentiation\n \'L\' - Logarithm\n \'S\' - Sinus\n \'C\' - Co-sinus\n \'T\' - Tang-ens\n\n");
 		if (!std_cal_.enter_the_date(tab_advanced_math_sign_, tab_size))
 		{
 			continue;

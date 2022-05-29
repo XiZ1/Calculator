@@ -15,7 +15,7 @@ void c_unit_conversion_calculator::start_unit_conversion_calculator()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("UNITS CONVERSION CALCULATOR MODULE:\n0. LENGTH\n1. MASS\n2. VOLUME\n");
+		c_calculator::display_the_message("UNITS CONVERSION CALCULATOR MODULE:\n 0. LENGTH\n 1. MASS\n 2. VOLUME\n\n");
 		choose_conversion_units();
 	}while (end_loop);
 }
@@ -27,6 +27,7 @@ void c_unit_conversion_calculator::start_unit_conversion_calculator()
 void c_unit_conversion_calculator::choose_conversion_units()
 {
 	int choose = -1;
+	cout << "Enter the number module: ";
 	cin >> choose;
 	switch (choose)
 	{
@@ -63,7 +64,7 @@ void c_unit_conversion_calculator::start_length_conversion()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("Choose which unit you want to conversion:\n0. Millimeter [mm]\n1. Centimeter [cm]\n2. Decimeter [dm]\n3. Meter [m]\n4. Kilometer [km]\n5. EXIT");
+		c_calculator::display_the_message("Choose which unit you want to conversion:\n0. Millimeter [mm]\n1. Centimeter [cm]\n2. Decimeter [dm]\n3. Meter [m]\n4. Kilometer [km]\n5. EXIT\n\n");
 		const int utc = choose_unit();
 		create_unit_name_tab(tab_length_units_names_, tab_length_unit_size, utc);
 		get_unit_value(unit_);
@@ -84,7 +85,7 @@ void c_unit_conversion_calculator::start_mass_conversion()
 		}
 		c_calculator::clear_screen();
 		// ReSharper disable once StringLiteralTypo
-		c_calculator::display_the_message("Choose which unit you want to conversion:\n0. Gram [g]\n1. Decagram [dag]\n2. Kilogram [kg]\n3. Ton [t]\n4. EXIT");
+		c_calculator::display_the_message("Choose which unit you want to conversion:\n0. Gram [g]\n1. Decagram [dag]\n2. Kilogram [kg]\n3. Ton [t]\n4. EXIT\n\n");
 		const int utc = choose_unit();
 		create_unit_name_tab(tab_mass_units_names_, tab_other_unit_size, utc);
 		get_unit_value(unit_);
@@ -104,7 +105,7 @@ void c_unit_conversion_calculator::start_volume_conversion()
 			continue;
 		}
 		c_calculator::clear_screen();
-		c_calculator::display_the_message("Choose which unit you want to conversion:\n0. Milliliter [ml]\n1. Centiliter [cl]\n2. Deciliter [dl]\n3. Liter [l]\n4. EXIT");
+		c_calculator::display_the_message("Choose which unit you want to conversion:\n0. Milliliter [ml]\n1. Centiliter [cl]\n2. Deciliter [dl]\n3. Liter [l]\n4. EXIT\n\n");
 		const int utc = choose_unit();
 		create_unit_name_tab(tab_volume_units_names_, tab_other_unit_size, utc);
 		get_unit_value(unit_);
@@ -116,6 +117,7 @@ void c_unit_conversion_calculator::start_volume_conversion()
 int c_unit_conversion_calculator::choose_unit()
 {
 	int utc = -1;
+	cout << "Enter the unit number: ";
 	cin >> utc;
 	return utc;
 }
@@ -279,4 +281,5 @@ void c_unit_conversion_calculator::show_result_conversion() const
 	{
 		cout << result_conversion_[i] << " " << tab_res_con_unit_name_[i] << "\n";
 	}
+	system("pause");
 }

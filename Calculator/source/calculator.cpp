@@ -14,7 +14,7 @@ void c_calculator::start_calculator_app()
 	do
 	{
 		clear_screen();
-		display_the_message("Choose calculator mode:\n1. Standard Calculator.\n2. Advanced Calculator.\n3. Developer Calculator.\n4. Unit Conversion Calculator.\n5.EXIT.\n");
+		display_the_message("Choose calculator mode:\n 1. Standard Calculator.\n 2. Advanced Calculator.\n 3. Developer Calculator.\n 4. Unit Conversion Calculator.\n 5.EXIT.\n");
 		switch (_getch())
 		{
 			case '1':
