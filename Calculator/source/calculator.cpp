@@ -31,13 +31,13 @@ void c_calculator::start_calculator_app()
 
 			case '3':
 			{
-				c_developer_calculator o_developer_calculator;
+				c_developer_calculator o_developer_calculator; //TODO: Check and fix all source code paths developer calculator.
 				o_developer_calculator.start_developer_calculator();
 			}break;
 
 			case '4':
 			{
-				c_unit_conversion_calculator o_unit_conversion_calculator;
+				c_unit_conversion_calculator o_unit_conversion_calculator; //TODO: Check and fix all source code paths unit conversion calculator.
 				o_unit_conversion_calculator.start_unit_conversion_calculator();
 			}break;
 
