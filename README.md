@@ -32,47 +32,46 @@ Standard calculator
 ![Standard_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Standard_Calculator.png)
 
 It allows you to perform six basic math operations:
-	Addition
-	Subtraction
-	Division
-	Multiplication
-	The rest of the division
-	Square root
+-Addition
+-Subtraction
+-Division
+-Multiplication
+-The rest of the division
+-Square root
 
 Advanced calculator
 
 ![Advanced_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Advanced_Calculator.png)
 
 It allows you to perform twelve basic and advanced mathematical operations:
-	Addition
-	Subtraction
-	Division
-	Multiplication
-	The rest of the division
-	Square root
-	Cube root
-	Exponentiation
-	Logarithm
-	Sine
-	Cosine
-	Tangent
+-Addition
+-Subtraction
+-Division
+-Multiplication
+-The rest of the division
+-Square root
+-Cube root
+-Exponentiation
+-Logarithm
+-Sine
+-Cosine
+-Tangent
 
 Calculator for developers
 
 ![Developer_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Developer_Calculator.png)
 
 It allows you to convert number systems
-	BIN
-	OCT
-	DEC
-	HEX
+-BIN
+-OCT
+-DEC
+-HEX
 
 Unit conversion calculator
 
 ![Unit_Conversion_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Unit_Conversion_Calculator.png)
 
 It allows unit conversions
-	LENGTH
-	WEIGHT
-	VOLUME
-
+-LENGTH
+-WEIGHT
+-VOLUME
