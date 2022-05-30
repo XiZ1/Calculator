@@ -13,11 +13,11 @@ To properly build the application, I recommend the following changes to the proj
 
 Configuration Properties:
 	General:
-		Output directory: $ (SolutionDir) Calculator \ bin \ $ (Platform) \ $ (Configuration) \
-		Intermediate directory: $ (SolutionDir) Calculator \ bin \ Intermediate \ $ (Platform) \ $ (Configuration) \
+		Output directory: $(SolutionDir)Calculator\bin\$(Platform)\$(Configuration)\
+		Intermediate directory: $(SolutionDir)Calculator\bin\Intermediate\$(Platform)\$(Configuration)\
 		C ++ language standard: C ++ 20
 	C ++ Directories:
-		Header file directories: C: \ Users \ kubag \ Desktop \ ALL \ Programing \ C ++ \ Projects \ Calculator \ Calculator \ include
+		Header file directories: [PATH TO]\Calculator\Calculator\include
 
 
 
