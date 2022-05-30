@@ -25,7 +25,7 @@ Configuration Properties:
 
 The calculator consists of four modules. Each module is written in separate classes that are combined into a single whole.
 
-![](Image\Main_Menu.png)
+![Main_menu.png](https://github.com/XiZ1/Calculator/blob/master/Images/Main_Menu.png)
 
 Standard calculator
 
