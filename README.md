@@ -29,7 +29,7 @@ The calculator consists of four modules. Each module is written in separate clas
 
 Standard calculator
 
-![Standard_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Image/Standard_Calculator.png)
+![Standard_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Standard_Calculator.png)
 
 It allows you to perform six basic math operations:
 	Addition
@@ -41,7 +41,7 @@ It allows you to perform six basic math operations:
 
 Advanced calculator
 
-![Advanced_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Image/Advanced_Calculator.png)
+![Advanced_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Advanced_Calculator.png)
 
 It allows you to perform twelve basic and advanced mathematical operations:
 	Addition
@@ -59,7 +59,7 @@ It allows you to perform twelve basic and advanced mathematical operations:
 
 Calculator for developers
 
-![Developer_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Image/Developer_Calculator.png)
+![Developer_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Developer_Calculator.png)
 
 It allows you to convert number systems
 	BIN
@@ -69,7 +69,7 @@ It allows you to convert number systems
 
 Unit conversion calculator
 
-![Unit_Conversion_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Image/Unit_Conversion_Calculator.png)
+![Unit_Conversion_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Unit_Conversion_Calculator.png)
 
 It allows unit conversions
 	LENGTH
