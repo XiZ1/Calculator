@@ -117,15 +117,16 @@ void c_developer_calculator::convert(const numbers_system choose) const
 int c_developer_calculator::oct_to_bin(int oct_num) const
 {
 	int decimal_num = 0, binary_num = 0, count = 0;
-	
-	while (oct_num != 0) {
+	while (oct_num != 0) 
+	{
 		// ReSharper disable once CppRedundantParentheses
 		decimal_num += (oct_num % 10) * pow(8, count);  // NOLINT(cppcoreguidelines-narrowing-conversions)
 		++count;
 		oct_num /= 10;
 	}
 	count = 1;
-	while (decimal_num != 0) {
+	while (decimal_num != 0) 
+	{
 		binary_num += (decimal_num % 2) * count;
 		decimal_num /= 2;
 		count *= 10;
@@ -136,7 +137,8 @@ int c_developer_calculator::oct_to_bin(int oct_num) const
 int c_developer_calculator::dec_to_bin(int decimal)
 {
 	int binary = 0, product = 1;
-	while (decimal != 0) {
+	while (decimal != 0) 
+	{
 		const int remainder = decimal % 2;
 		binary = binary + (remainder * product);
 		decimal = decimal / 2;
@@ -149,83 +151,100 @@ void c_developer_calculator::hex_to_bin(const string& number)
 {
 	long int i = 0;
 	c_calculator::clear_screen();
-	while (number[i]) {
-
+	while (number[i]) 
+	{
 		switch (number[i])
 		{
 			case '0':
-
+			{
 				cout << "0000";
-			break;
+			}break;
 
 			case '1':
+			{
 				cout << "0001";
-			break;
+			}break;
 
 			case '2':
+			{
 				cout << "0010";
-			break;
+			}break;
 
 			case '3':
+			{
 				cout << "0011";
-			break;
+			}break;
 
 			case '4':
+			{
 				cout << "0100";
-			break;
+			}break;
 
 			case '5':
+			{
 				cout << "0101";
-			break;
+			}break;
 
 			case '6':
+			{
 				cout << "0110";
-			break;
+			}break;
 
 			case '7':
+			{
 				cout << "0111";
-			break;
+			}break;
 
 			case '8':
+			{
 				cout << "1000";
-			break;
+			}break;
 
 			case '9':
+			{
 				cout << "1001";
-			break;
+			}break;
 
 			case 'A':
 			case 'a':
+			{
 				cout << "1010";
-			break;
+			}break;
 
 			case 'B':
 			case 'b':
+			{
 				cout << "1011";
-			break;
+			}break;
 
 			case 'C':
 			case 'c':
+			{
 				cout << "1100";
-			break;
+			}break;
 
 			case 'D':
 			case 'd':
+			{
 				cout << "1101";
-				break;
+			}break;
+
 			case 'E':
 			case 'e':
+			{
 				cout << "1110";
-			break;
+			}break;
 
 			case 'F':
 			case 'f':
+			{
 				cout << "1111";
-			break;
+			}break;
 
 			default:
+			{
 				cout << "\nInvalid hexadecimal digit " << number[i];
-			break;
+			}break;
 		}
 		i++;
 	}
