@@ -24,7 +24,7 @@ Właściwości konfiguracji:
 
 Kaltulator sklada sie z czterech modułów. Każdy moduł jest napisany w osobnej klasie które są łaczone w jednej klasie.
 
-![](Image\Main_Menu.png)
+![](https://github.com/XiZ1/Calculator/blob/master/Images/Main_Menu.png)
 
 Standardowy kalkulator
 
