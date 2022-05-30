@@ -29,49 +29,50 @@ The calculator consists of four modules. Each module is written in separate clas
 
 Standard calculator
 
-![](Image\Standard_Calculator.png)
+![Standard_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Image/Standard_Calculator.png)
 
 It allows you to perform six basic math operations:
-Addition
-Subtraction
-Division
-Multiplication
-The rest of the division
-Square root
+	Addition
+	Subtraction
+	Division
+	Multiplication
+	The rest of the division
+	Square root
 
 Advanced calculator
 
-![](Image\Advanced_Calculator.png)
+![Advanced_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Image/Advanced_Calculator.png)
 
 It allows you to perform twelve basic and advanced mathematical operations:
-Addition
-Subtraction
-Division
-Multiplication
-The rest of the division
-Square root
-Cube root
-Exponentiation
-Logarithm
-Sine
-Cosine
-Tangent
+	Addition
+	Subtraction
+	Division
+	Multiplication
+	The rest of the division
+	Square root
+	Cube root
+	Exponentiation
+	Logarithm
+	Sine
+	Cosine
+	Tangent
 
 Calculator for developers
 
-![](Image\Developer_Calculator.png)
+![Developer_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Image/Developer_Calculator.png)
 
 It allows you to convert number systems
-BIN
-OCT
-DEC
-HEX
+	BIN
+	OCT
+	DEC
+	HEX
 
 Unit conversion calculator
 
-![](Image\Unit_Conversion_Calculator.png)
+![Unit_Conversion_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Image/Unit_Conversion_Calculator.png)
 
 It allows unit conversions
-LENGTH
-WEIGHT
-VOLUME
+	LENGTH
+	WEIGHT
+	VOLUME
+
