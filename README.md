@@ -1,21 +1,19 @@
 # KALKULATOR
-	Hello to all visitors to this repository, you will find here my proprietary implementation of a rather simplified calculator
-	known from Windows 10.  
-	The program was created for a fairly prosaic reason of programming in C ++, I learn by writing my own projects,
-	it is one of the projects that I want to share with the world.  
+	Hello to all visitors to this repository, you will find here my proprietary implementation of a rather simplified calculator known from Windows 10.  
+	The program was created for a fairly prosaic reason of programming in C ++, I learn by writing my own projects, it is one of the projects that I want to share with the world.  
 	Feel free to browse, comment, rate, correct and develop the code.  
 	Thank you in advance for any comments and evaluations.  
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## TECHNOLOGIA
+## TECHNOLOGY
 	The program is a console application written in C ++ using the C ++ 20 standard.  
 	The workbench is Visual Studio 2022 with JetBrains ReSharper extension.  
-	The project build system is based on the .sln and .vcxproj files.    
+	The project build system is based on the .sln and .vcxproj files.  
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## KONFIGURACJA I KOMPILACJA
+## CONFIGURATION AND COMPILATION
 	1. Visual Studio 2022  
 		To properly build the application, I recommend the following changes to the project properties and then project builds.  
 			Configuration Properties:  
@@ -77,3 +75,10 @@
 			-WEIGHT  
 			-VOLUME  
 ![Unit_Conversion_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Unit_Conversion_Calculator.png)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### COPYRIGHTS
+	Copyright (C) 2022 Jakug Górecki - All Right Reserved.  
+	Gmail: jakub.xiz1.gorecki@gmail.com  
+	GitHub https://github.com/XiZ1  
