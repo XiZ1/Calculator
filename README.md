@@ -24,15 +24,14 @@
 				C ++ Directories:  
 					Header file directories: [PATH TO]\Calculator\Calculator\include  
 
-	2.Visual Studio Code  
-		Worl in progress.  
-
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### APPLICATION USAGE
 	The calculator consists of four modules. Each module is written in separate classes that are combined into a single whole.  
 
 	1. Main Menu  
+		This module combines other modules and is used to turn on other modules.  
+		Individual modules can be enabled by entering their number from the list.  
 ![Main_menu.png](https://github.com/XiZ1/Calculator/blob/master/Images/Main_Menu.png)
 
 	2. Standard calculator:  
@@ -43,6 +42,7 @@
 			-Multiplication  
 			-The rest of the division  
 			-Square root  
+		To make calculations, you need to give three things in the right order, first give the first number, then the sign corresponding to the action you want to perform, and finally the second number.  	
 ![Standard_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Standard_Calculator.png)
 
 	3. Advanced calculator  
@@ -59,6 +59,7 @@
 			-Sine  
 			-Cosine  
 			-Tangent  
+		To make calculations, you need to give three things in the right order, first give the first number, then the sign corresponding to the action you want to perform, and finally the second number.  
 ![Advanced_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Advanced_Calculator.png)
 
 	4. Calculator for developers  
@@ -66,7 +67,8 @@
 			-BIN  
 			-OCT  
 			-DEC  
-			-HEX  
+			-HEX
+		To convert number systems, first select the number system from which you want to convert the number to other systems, and then enter the number to be converted.     
 ![Developer_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Developer_Calculator.png)
 
 	5. Unit conversion calculator  
@@ -74,6 +76,7 @@
 			-LENGTH  
 			-WEIGHT  
 			-VOLUME  
+		First, we choose the type of unit to be converted, then we choose the unit we want to convert, and then enter its value.  
 ![Unit_Conversion_Calculator.png](https://github.com/XiZ1/Calculator/blob/master/Images/Unit_Conversion_Calculator.png)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
