@@ -15,3 +15,8 @@ bool app_ui::checking_input_value(const double& f_number, const char& sign, cons
 	}
 	return false;
 }
+
+void app_ui::show_message(const std::string& message)
+{
+	std::cout << message;
+}
