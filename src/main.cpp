@@ -1,5 +1,3 @@
-#include <string>
-#include "calculator.h"
 #include "app_ui.h"
 
 int main(int argc, char* argv[])
@@ -10,18 +8,11 @@ int main(int argc, char* argv[])
 
 	if (argc == 1)
 	{
-		//app ui
+		app_ui::start_app_with_ui(f_number, sign, s_number);
 	}
 	else if (argc == 4)
 	{
-		if (app_ui::checking_input_value(f_number, sign, s_number))
-		{
-			app_ui::show_message("Result calculate " + std::to_string(f_number) + " " + sign + " " + std::to_string(s_number) + " is: " + std::to_string(calculator::calculate(f_number, sign, s_number)));
-		}
-		else
-		{
-			app_ui::show_message("Wrong mathematical char or division by zero.\n");
-		}
+		app_ui::start_app_without_ui(f_number, sign, s_number);
 	}
 	else
 	{
