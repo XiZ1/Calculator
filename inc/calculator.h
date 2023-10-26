@@ -3,6 +3,7 @@
 class calculator
 {
 	public:
+		static bool checking_input_value(const double& f_number, const char& sign, const double& s_number);
 		static double calculate(const double& f_number, const char& sign, const double& s_number);
 
 	private:
