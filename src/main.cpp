@@ -1,6 +1,6 @@
 #include "app_ui.h"
 
-int main(int argc, char* argv[])
+int main(const int argc, char* argv[])
 {
 	const double f_number = 0.0;
 	const double s_number = 0.0;
