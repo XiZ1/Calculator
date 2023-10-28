@@ -152,12 +152,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="inc\app_ui.h" />
+    <ClInclude Include="inc\calculate.h" />
     <ClInclude Include="inc\calculator.h" />
+    <ClInclude Include="inc\calculator_app.h" />
+    <ClInclude Include="inc\input.h" />
+    <ClInclude Include="inc\valid.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\app_ui.cpp" />
+    <ClCompile Include="src\calculate.cpp" />
     <ClCompile Include="src\calculator.cpp" />
+    <ClCompile Include="src\calculator_app.cpp" />
+    <ClCompile Include="src\input.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\valid.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />
