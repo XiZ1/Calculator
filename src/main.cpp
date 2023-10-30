@@ -1,8 +1,9 @@
-#include <iostream>
+#include "calculator_app.h"
 
 int main()
 {
-	std::cout << "RESET!\n";
+	calculator_app calculator;
+	calculator.start_app();
 
 	return 0;
 }
