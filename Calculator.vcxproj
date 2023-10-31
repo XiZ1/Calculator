@@ -73,22 +73,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)\inc;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Dev\Calculator\inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)\inc;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Dev\Calculator\inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)\inc;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Dev\Calculator\inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)\inc;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Dev\Calculator\inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -159,9 +159,7 @@
     <ClInclude Include="inc\valid.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\app_ui.cpp" />
     <ClCompile Include="src\calculate.cpp" />
-    <ClCompile Include="src\calculator.cpp" />
     <ClCompile Include="src\calculator_app.cpp" />
     <ClCompile Include="src\input.cpp" />
     <ClCompile Include="src\main.cpp" />

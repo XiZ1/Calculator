@@ -7,6 +7,5 @@ int main()
 
 	return 0;
 }
-//TODO: Przetestowaæ aplikacjê.
 //TODO: Zrobic UI.
 //TODO: Rozbudowaæ aplikacjê o nowe funkcjê.
