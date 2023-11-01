@@ -8,7 +8,14 @@
 #include "valid.h"
 #include "calculate.h"
 
-bool calculator_app::start_app()
+calculator_app::calculator_app(const double f_number, const char sign, const double s_number)
+{
+	this->f_number_ = f_number;
+	this->sign_ = sign;
+	this->s_number_ = s_number;
+}
+
+bool calculator_app::start_app_with_ui()
 {
 	system("cls");  // NOLINT(concurrency-mt-unsafe)
 	std::cout << "\tCALCULATOR\n\n";
@@ -22,21 +29,18 @@ bool calculator_app::start_app()
 			if (validate::start_validate_data(sign_, s_number_))
 			{
 				result_ = calculate::start_calculate(f_number_, sign_, s_number_);
-				std::cout << "Result: " + std::to_string(result_);
+				std::cout << "Result: " + std::to_string(result_) + "\n\n";
 			}
 			else
 			{
 				std::cout << "Incorrect value.\n";
 			}
-			Sleep(2500);
+			Sleep(2000);
 			return true;
 		}
 
 		case '2':
 		{
-			system("cls");  // NOLINT(concurrency-mt-unsafe)
-			std::cout << "EXIT.\n\n\n\n";
-			Sleep(2500);
 			return false;
 		}
 
@@ -44,8 +48,21 @@ bool calculator_app::start_app()
 		{
 			system("cls");  // NOLINT(concurrency-mt-unsafe)
 			std::cout << "This option doesn't exist!\nTry again.\n\n\n\n";
-			Sleep(2500);
+			Sleep(2000);
 			return true;
 		}
+	}
+}
+
+void calculator_app::start_app_without_ui()
+{
+	if (validate::start_validate_data(sign_, s_number_))
+	{
+		result_ = calculate::start_calculate(f_number_, sign_, s_number_);
+		std::cout << "Result: " + std::to_string(result_) + "\n\n";
+	}
+	else
+	{
+		std::cout << "Incorrect value.\n";
 	}
 }
