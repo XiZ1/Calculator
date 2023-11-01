@@ -10,14 +10,14 @@
 
 bool calculator_app::start_app()
 {
-	system("cls");
+	system("cls");  // NOLINT(concurrency-mt-unsafe)
 	std::cout << "\tCALCULATOR\n\n";
 	std::cout << "Choose one option. Press a number:\n\n1. Basic calculator.\n2. Exit.\n\n\n\n";
 	switch (_getch())
 	{
 		case'1':
 		{
-			system("cls");
+			system("cls");  // NOLINT(concurrency-mt-unsafe)
 			input::start_entering_data(&f_number_, &sign_, &s_number_);
 			if (validate::start_validate_data(sign_, s_number_))
 			{
@@ -34,7 +34,7 @@ bool calculator_app::start_app()
 
 		case '2':
 		{
-			system("cls");
+			system("cls");  // NOLINT(concurrency-mt-unsafe)
 			std::cout << "EXIT.\n\n\n\n";
 			Sleep(2500);
 			return false;
@@ -42,7 +42,7 @@ bool calculator_app::start_app()
 
 		default:
 		{
-			system("cls");
+			system("cls");  // NOLINT(concurrency-mt-unsafe)
 			std::cout << "This option doesn't exist!\nTry again.\n\n\n\n";
 			Sleep(2500);
 			return true;
