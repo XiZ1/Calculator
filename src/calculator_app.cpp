@@ -12,7 +12,7 @@ bool calculator_app::start_app()
 {
 	system("cls");
 	std::cout << "\tCALCULATOR\n\n";
-	std::cout << "Choose one option. Press a number:\n\n1. Basic calculator.\n2. Advance calculator.\n3. Exit.\n\n\n\n";
+	std::cout << "Choose one option. Press a number:\n\n1. Basic calculator.\n2. Exit.\n\n\n\n";
 	switch (_getch())
 	{
 		case'1':
@@ -32,15 +32,7 @@ bool calculator_app::start_app()
 			return true;
 		}
 
-		case'2':
-		{
-			system("cls");
-			std::cout << "Work in Progress!\n\n\n\n";
-			Sleep(2500);
-			return true;
-		}
-
-		case '3':
+		case '2':
 		{
 			system("cls");
 			std::cout << "EXIT.\n\n\n\n";
