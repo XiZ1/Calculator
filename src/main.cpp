@@ -2,8 +2,13 @@
 
 int main()
 {
+	bool exit = true;
 	calculator_app calculator;
-	calculator.start_app();
+	do
+	{
+		exit = calculator.start_app();
+	}
+	while (exit);
 
 	return 0;
 }
