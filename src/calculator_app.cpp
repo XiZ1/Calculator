@@ -9,7 +9,7 @@
 void calculator_app::start_app()
 {
 	input::start_entering_data(&f_number_, &sign_, &s_number_);
-	if (validate::start_validate_data(f_number_, sign_, s_number_))
+	if (validate::start_validate_data(sign_, s_number_))
 	{
 		result_ = calculate::start_calculate(f_number_, sign_, s_number_);
 		std::cout << "Result: " + std::to_string(result_);

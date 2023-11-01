@@ -1,6 +1,6 @@
 #include "valid.h"
 
-bool validate::start_validate_data(const double& f_number, const char& sign, const double& s_number)
+bool validate::start_validate_data(const char& sign, const double& s_number)
 {
 	if (validate_char(sign))
 	{
